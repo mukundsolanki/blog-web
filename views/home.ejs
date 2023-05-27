@@ -1,12 +1,12 @@
+<%- include("header") -%>
 
-    <%- include("header") -%>
-    
-    <h1>Home</h1>
-    <p><%= homePage %></p>
+<h1>Home</h1>
+<p><%= homePage.substring(0, 24) + "..."; %></p>
 
-    <% homeObj.forEach(function(element) { %>
-        <h1><%= element.heading %></h1>
-        <p> <%= element.description %> </p>
-    <% }); %>
-    
-    <%- include("footer") -%>
+<% homeObj.forEach(function(element) { %>
+    <h1><%= element.heading %></h1>
+    <p> <%= element.description.substring(0, 200) + '...'; %> </p> 
+    <a href="/read/<%=element.heading%>">Read More</a>
+<% }); %>
+
+<%- include("footer") -%>
